@@ -1,0 +1,110 @@
+\section{Control}
+\label{sec:control}
+
+\subsection{The KAT Control Protocol: KATCP}
+\label{sec:KATCP}
+
+\noindent
+The MeerKAT telescope contains a large number of devices that require
+control and monitoring, usually both. Most of these devices are
+bespoke, meaning that they were constructed either within the project
+or by a contractor to the specifications defined by the project.  As a
+consequence we had the luxury of being able to select a communications
+design strategy, architecture and protocol suite used for the control
+and monitoring of the telescope.
+
+A significant design decision was to confine low-latency, real-time
+control functions to a small set of components. In other words the
+control system as a whole does not operate on a low-latency basis ---
+instead, time critical commands are sent out well in advance and are
+scheduled by a smaller real-time component close to the limited number
+of elements requiring such control. The system distributes a clock
+signal to subordinate nodes.  This decision makes it possible to use
+computer systems running conventional (not hard-real-time) operating
+systems that communicate using common, non-deterministic interconnects
+and protocols. In particular it was possible to select TCP/IP over
+Ethernet for transport: these are well-established, pervasive and
+inexpensive lower communications layers.
+
+The only locally developed part of the control network is the
+application control protocol, KATCP, running on top
+of TCP/IP\@. KATCP borrows from established, classical Internet
+protocols such as SMTP, FTP and POP in that is an application protocol
+which is easily read by humans; each line of text is a protocol
+message. The protocol is not too different from a
+command prompt or shell interface, where each input line is also a
+command. However, unlike command line utility output, the protocol
+replies have a regular, well-defined structure\footnote{See
+\url{https://casper.berkeley.edu/wiki/KATCP}
+ and \url{https://pythonhosted.org/katcp}.
+}.
+
+
+\subsection{Streaming Protocol for Exchanging Astronomical Data: SPEAD}
+
+\noindent
+In analogy with the control protocol, we unified the data exchange
+protocol wherever practicable. Hence the correlator internals,
+correlator output stage, and science processor all share a common
+data-exchange format called
+SPEAD\footnote{The specification document and a full description can
+be found at \url{https://casper.berkeley.edu/wiki/SPEAD}}. 
+
+
+\textcolor{blue}{
+SPEAD is a one-way, best-effort, self-describing protocol, containing
+both machine and human-readable descriptions. This allows receiver
+processes to automatically unpack data, enabling application designers
+to concern themselves with algorithms rather than with data
+exchange. It also allows users to comment their data-streams so that
+stored data can easily be reinterpreted at a later date without
+additional documentation, or to easily debug data exchanges.}
+
+Other data protocols such as the VLBI Data Interchange Format, 
+VDIF~\footnote{\url{http://www.vlbi.org/vdif/}} were considered, 
+\textcolor{blue}{but it was decided
+that they were not sufficiently self-describing or flexible.
+}
+SPEAD was
+developed in collaboration with the PAPER (Precision Array for Probing
+the Epoch of Reionization; \citealt{parsons}) team as part of the
+broader CASPER collaboration and is available under an open-source
+(GPL) license. SPEAD can be used for on-the-wire exchange, for on-disk
+storage or for piping data between application processes within a
+single compute node. 
+This protocol is implemented on ROACH boards, Central Processing
+units (CPUs) and Graphical Processing Unit (GPUs).
+
+SPEAD is in essence optimised for the transmission of arrays of data
+from one location to another. In particular we use SPEAD extensively
+for the movement of Python Numpy arrays (Figure~\ref{fig:SPEAD}).  It
+is designed to allow exchange of arbitrary data structures and aims to keep
+receivers' copies fresh by propagating any changes
+to the receiver as these changes occur on the transmitter.
+\textcolor{blue}{
+The metadata and variable descriptors are injected into the primary data stream.
+Such changes will occur if the correlator is started, or changes mode
+or the frequency of a local oscillator is altered.
+Receiver processes keep state information, so
+the latest values of all variables within the structure are always
+available, even if only the changed subset is transmitted.
+If these dynamic features are not required, a lightweight and faster
+static implementation can be made.}
+
+\label{sec:SPEAD}
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f8.eps} 
+\caption{SPEAD exchanges between a range of platforms. Once the data has been sampled and Fourier transformed in the F-engine all the data is handled internally as SPEAD packets or as Numpy arrays.}
+\label{fig:SPEAD}
+\end{figure}
+
+As a one-way transport, and because it operates over UDP on Ethernet
+networks, it is easy to support multicast transparently, allowing
+multiple devices to subscribe to the same data-streams.
+\textcolor{blue}{This allows
+real-time data inspection and plotting by subscribing to a subset of the 
+data. As UDP does not check for packet delivery SPEAD was made to tolerate
+some packet loss, but cannot request a lost or corrupted packet.
+Buffering helps by allowing for packets being received out of sequence.}
+
+

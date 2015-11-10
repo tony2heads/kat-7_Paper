@@ -1,0 +1,539 @@
+\section{First Image with KAT-7}
+\label{sec:images}
+
+\noindent
+The first tests of the completed KAT-7 system were undertaken in 2011
+August using the Wideband continuum mode (See
+Table~\ref{table:modes}). The specific combination of sensitivity,
+angular resolution, $\approx$ 3(4)$\arcmin$ at 1822(1328)\,MHz, and
+field-of-view ($\approx 1\degr$) of KAT-7 require extended southern
+sources for use as imaging targets to use for testing this mode.  One
+such source is \mbox{PKS 1610-60} which has an integrated flux density of
+43\,Jy at 1822\,MHz, and an extent of 30\arcmin\ in right ascension and
+4\arcmin\ in declination \citep{christiansen}.  This source was
+observed with KAT-7 for 10 hours with both polarizations at a
+frequency of 1822\,MHz. The KAT-7 correlator outputs the data into an
+observatory-specific format based on HDF5.  After conversion to a
+standard Measurement Set the data are calibrated and imaged in CASA
+\citep{mcmullin}. The final total-intensity image can be found in
+Figure~\ref{fig:pks1610}. The dynamic range (ratio of the peak image
+intensity to the r.m.s.~image noise) of this map is about 200:1.
+
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f9.eps} 
+\caption{Synthesis image of \mbox{PKS 1610-60} region containing the more
+  prominent bent-double radio galaxy \mbox{PKS 1610-60.8} (below) and the
+  smaller radio galaxy \mbox{PKS 1610-60.5} (above).}
+\label{fig:pks1610}
+\end{figure}
+
+
+
+\section{Radio Continuum Imaging and Monitoring}
+\label{sec:continuum}
+
+\noindent
+A sample of calibrators ($-90\degr<\delta<30\degr$ ) are continuously
+being monitored and identified as possible short-spacings flux-density
+calibrators \citep{kassaye}. The aim of this monitoring campaign is
+also to image potential new calibrators with short spacings and to
+assess their long-term variability. Several sources that are suitable
+as point-source calibrators for interferometers with larger dishes,
+and consequently smaller fields-of-view (such as e.g. \mbox{J0943-081}
+and \mbox{J2326-4027}) have proven unsuitable for KAT-7 as they have
+nearby contaminating sources within the primary beam.
+%re-written -Tony
+In general we have rejected candidate calibrators that are found to
+have a contaminating source above 10\% of their peak
+\textcolor{blue}{brightness}, or where the integrated flux density
+(estimated using the shortest baseline) is more than 10\% greater than
+the maximum \textcolor{blue}{flux density per beam}
+%
+% Most placed on the sky will have a few hundred milliJansky spread
+% over a few sources within the KAT-7 primary beam at 1.2-1.95\,GHz.
+\textcolor{blue}{Given the size of the KAT-7 primary beam at
+  1.2-1.95\,GHz, most maps have few hundred milliJansky spread over a
+  number of sources brighter than 1mJy/beam. This is consistent source
+  number counts from the FIRST and ATLBS surveys.}  With the modest
+angular resolution of KAT-7 we would expect our images to be limited
+by confusion noise rather than thermal noise in Stokes
+\emph{I}. \textcolor{blue}{For most places on the sky} we hit a
+continuum confusion limit of about 1(2) mJy/beam at 1822(1328)\,MHz
+(based on no more than one source per five beams), and making high
+dynamic range continuum images where confusion is so high has proven
+difficult. \textcolor{blue}{The confusion limit is even higher along
+  the galactic plane.}
+
+\textcolor{blue}{ From a full-polarization analysis, the polarization
+  fraction of $8.4\pm0.6 \%$ was seen for 3C286 and $8.1\pm0.6 \%$ for
+  3C138. These values are in good agreement with those determined by
+  \citet{perley}.  Polarization was calibrated using full-Stokes
+  observations of unpolarized radio sources such as \mbox{PKS
+    1934-638} to determine instrumental leakage (of total intensity
+  into polarization), and sources with high linear polarization at
+  L-band over a large range of parallactic angles to measure delay and
+  phase offsets between horizontal and vertical dipoles.  Typical
+  leakages within the half-power beam width were of the order of 3\%
+  in the upper band (1822\,MHz) and 3--6\% in the lower band
+  (1322\,MHz), so second order correction effects were negligible.}
+
+\textcolor{blue}{ Although the dynamic range in continuum total
+  intensity is limited by confusion after about 8 hours, this is not
+  the case for polarization or spectral line observations. We do
+  however need the instrumental polarization corrections for high
+  dynamic range spectral line observations, such as in OH maser
+  observations.}
+
+
+\section{Commissioning Science with KAT-7}
+\label{sec:comm}
+
+\noindent
+KAT-7 went through in a science commissioning phase.  The requirements
+for commissioning science projects are (i) that they test the
+performance of various aspects of commissioning (e.g.~correlator
+modes, data reduction pipeline, RFI mitigation), and (ii) they
+endeavour to contribute new and original scientific results.  These
+projects touch on a broad range of scientific interest, including, but
+not limited to, topics identified as MeerKAT Key Science Projects.
+Projects include:
+
+\begin{itemize}
+\item Monitoring variable continuum sources (selected from ATEL
+  announcements).
+\item Imaging extended, diffuse continuum emission.
+\item Timing strong southern pulsars.
+\item Conducting very long baseline interferometry (VLBI).
+\item Measuring HI spectral line kinematics and low surface brightness emission in nearby galaxies and clusters.
+\item Monitoring OH maser emission.
+\item Mapping large scale polarization.
+\item Implementing techniques for HI intensity mapping.
+\end{itemize}
+
+\noindent
+We outline several of these completed and ongoing science
+commissioning projects in the following subsections.  We highlight
+their scientific importance, and their contributions to KAT-7
+commissioning and preparations for MeerKAT.
+
+\subsection{Transient sources}
+
+\noindent
+
+Many transient sources 
+%(e.g.~PKS~1424-418, Circinus~X-1, PKS~2356-502)
+have been monitored with KAT-7 ranging from neutron-star 
+and black-hole X-ray binaries, blazars, galactic 
+gamma-ray binaries, and novae.
+Long-term monitoring of Circinus X-1, a bright and highly variable
+X-ray binary, was carried out using KAT- 7 at 1.9\,GHz and the HartRAO
+radio telescope at 4.8 and 8.5\,GHz by \citealt{armstrong}, and is
+the first published scientific paper using KAT-7 data, and a good
+example of multi-wavelength collaboration between South African
+instruments. The observations confirm a return to strong radio flaring
+first observed in 1970's that had been suppressed for two
+decades. Figure~\ref{fig:2F_OBS} shows this long-term behaviour.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f10.eps}
+\caption{A radio light curve of Circinus~X-1 obtained with KAT-7 (1.9\,GHz,
+red crosses) and HartRAO (4.8\,GHz, black circles and 8.5\,GHz, blue stars). 
+The X-ray binary system is clearly flaring to Jansky levels again. The times in 
+which KAT-7 is operational are shown in green. The vertical bars at each
+point represent the measurement noise, while the horizontal bars represent
+the observation length.}
+\label{fig:2F_OBS}
+\end{figure}
+
+Simultaneous observations of the black hole candidate Swift
+\mbox{J1745-26} with KAT-7, the Very Large Array (VLA), and the Australia
+Telescope Compact Array (ATCA) radio interferometers reveal a `failed outburst'
+event, illuminating details of the complex processes of accretion and
+feedback in black holes \citep{curran}.
+
+The blazar \mbox{PKS 1424-418} was observed as follow-up to ATEL4770
+(Figure~\ref{fig:atel4770}).  Similar observations have been carried
+out using the blazar source \mbox{PKS 1510-089} \citep{oozeer},
+whereby at least one flaring has been successfully recovered. Another
+weak transient source, \mbox{PKS 2356-502}, was observed in 2012 May
+and continues to be monitored (Figure~\ref{fig:2326}).
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f11.eps}
+\caption{\mbox{PKS 1424-418} imaged after ATEL4770. Contours start at $\pm$
+  10\,mJy/beam and go in steps of a factor of 4. Negative contours are
+  shown dashed and the synthesized beam is shown in the top left
+  corner. No primary beam correction has been applied.}
+\label{fig:atel4770}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f12.eps}
+\caption{\mbox{PKS 2356-502}. Contours start at $\pm$ 2.5\,mJy/beam and go in
+  steps of a factor of 4. Negative contours are shown dashed and the
+  synthesized beam is shown in the top left corner. 
+  The FWHM of the primary beam is $1.0\deg$. No primary beam
+  correction has been applied. 
+}
+\label{fig:2326}
+\end{figure}
+
+
+
+
+\subsection{Diffuse radio emission}
+
+\noindent
+With the availability of short spacings (26--185\,m, see
+Table~\ref{table:array}), KAT-7 is an ideal instrument to detect
+extended diffuse radio emission especially in galaxy clusters hosting
+halos and relics. For example, Abell~3667 was observed with KAT-7 and
+the nature of the diffuse emission (two large-scale relics) was confirmed
+(see \citealt{riseley}). 
+Figure~\ref{fig:aco} shows the continuum image of
+Abell~3667 at 1822\,MHz.
+
+
+
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f13.eps}
+\caption{Total intensity map of Abell 3667 at 1826\,MHz. Image noise
+  is 1.30\,mJy/beam. Contours mark [-1,1,2,3,4,6,8,12,16,32,64,128]
+  $\mathrm{\times \sigma_{rms}}$. The synthesised beam size (empty circle bottom left) is
+  $\mathrm{184 \times 150 \arcsec}$.
+  The FWHM of the primary beam is $\mathrm{1.0\deg}$.
+  }
+\label{fig:aco}
+\end{figure}
+
+
+figure \subsection{Pulsars}
+
+\noindent
+
+
+KAT-7 high-time resolution capability was first demonstrated through a
+single-dish observation of the Vela pulsar (\mbox{J0835-4510}) in late
+2012. Here Nyquist-sampled raw-voltage data was written to disk and
+processed offline using a custom pipeline which incorporates
+{\small\textsc{dspsr}}\footnote{\url{http://dspsr.sourceforge.net/}}
+and
+{\small\textsc{psrchive}}\footnote{\url{http://psrchive.sourceforge.net/}}
+tools \citep{hotan}. Semi-regular, dual-polarization observations of
+bright pulsars ($\gtrsim 10$~mJy) with the KAT-7 beamformer have since
+become standard practice. Single-pulse and folded searches have been
+performed successfully on a number of sources. A series of short
+pulsar timing campaigns have also been undertaken, predominantly
+focusing on \mbox{J0835-4510} due to its low period ($\sim$89.3~ms)
+and high flux density (1.1~Jy at 1400\,MHz;
+\citealt{bf74}). Figure~\ref{fig:pulsarspec} shows a comparison
+between the timing residuals obtained in 2014 November for
+\mbox{J0835-4510} using HartRAO and KAT-7 data.  \textcolor{blue}{
+  Figure~\ref{fig:pulsarfold} shows an observation of bright pulsar,
+  \mbox{J0835-4510}. It was reduced and plotted \textsc{psrchive}
+  software.}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f14.eps} 
+\caption{Phase residuals for Vela (\mbox{J0835-4510}), as produced by
+  the pulsar timing package \emph{tempo2} \citep{hobbs}. Those from
+  the 26~m HartRAO telescope (observed almost daily) are plotted in
+  red, whilst the blue points show observations made with the KAT-7
+  beamformer.  The plot confirms that the timing is consistent between
+  the two radio telescopes.}
+\label{fig:pulsarspec}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f15.eps} 
+\caption{Observation of the bright pulsar, \mbox{J0835-4510}, done
+  with KAT-7. These were taken for several minutes and this plot
+  presents the results after folding at the pulsar period of
+  89~milliseconds. The horizontal axis show the pulse phase and the
+  lower figure shows power as a function of frequency, with integrated
+  power over the band plotted above, while the upper figure shows
+  pulse power as function of time. The darker colour denotes higher
+  power.}
+\label{fig:pulsarfold}
+\end{figure}
+
+
+\subsection{VLBI}
+
+\noindent
+Pathfinder VLBI observations are critical to the establishment of the
+African VLBI Network (AVN; \citealt{gaylard}) in advance of SKA1.
+Although KAT-7 is not equipped with a hydrogen maser, typically
+required for VLBI observations, we obtained fringes between a single
+KAT-7 antenna and the 26-metre antenna located at HartRAO near
+Johannesburg, South Africa. The local GPS-disciplined rubidium time
+source was deemed sufficient for this experiment.  A short 30-minute
+test observation of the bright source 3C273 was performed on 2010
+November 23. This involved HartRAO recording the data to their Mark~V
+VLBI system, and KAT-7 recording to disk using the raw-voltage capture
+system.
+
+Due to the sampling clock of KAT-7 not being a power of 2, we used a
+DDC (digital down converter) to convert the sample rate in order to
+produce the resultant 64\,MHz bandwidth, via CUDA code deployed to a
+GPU.
+ 
+The data were combined and reduced using in-house python scripts. The
+data were then verified using the DiFX correlator package
+\citep{Deller}, with strong fringes subsequently detected
+(Figure~\ref{fig:vlbifringe}).
+
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f16.eps} 
+\caption{VLBI fringes obtained between KAT-7 and HartRAO using DiFX
+  software correlator. The horizontal axis is frequency channel and
+  the plots in descending order are amplitude, phase (in degrees) and
+  lag.}
+\label{fig:vlbifringe}
+\end{figure}
+
+
+
+\subsection{Spectral Lines: HI and OH observations}
+
+\subsubsection{HI}
+
+\noindent
+The receiver on KAT-7 covers the 1420\,MHz transition of neutral
+hydrogen (HI) redshifted as far as 1200\,MHz (z=0.184),
+although the intrinsic faintness of the
+spectral line and the resolution of the telescope make it most
+suitable to emission-line studies in the nearby Universe. In
+particular, KAT-7 is well suited for the study of nearby southern
+objects which have emission on scales larger than 15$\arcmin$,
+typically invisible to telescopes such as the VLA that lack the short
+baselines. This is well illustrated in the KAT-7 HI observations of
+NGC~3109 \citep{Carignan}, where 40\% more HI flux was detected
+than in previous VLA measurements (see Figure~\ref{fig:ngc3109}). The
+new data also allowed the derivation of the rotation curve 16$\arcmin$
+further out than the previous VLA measurements (see Figure 10 of
+\citealt{Carignan}). These observations were undertaken as part of
+commissioning the 6.25\,MHz spectral-line correlator mode, `HI 
+Galaxies' (Table~\ref{table:modes}). They led to the
+discovery of a source of antenna-dependent, faint, very narrow
+internally-generated RFI that was successfully eliminated by the
+insertion of a low-pass filter along the signal path.
+
+The wide field-of-view of KAT-7 and wide-bandwidth spectral-line modes
+make it a powerful instrument for mosaicking large areas on the sky,
+competitive with ATCA in terms of total observing time for similar
+sensitivity.  As part of commissioning the 25\,MHz `HI Galaxy
+Clusters' spectral-line correlator mode, several projects
+to image the HI in galaxy groups and clusters are currently underway
+(e.g.~Antlia Cluster, NGC~4055 Group). In particular, the Antlia
+Cluster was observed for 147 hours, in a 7-pointing discrete hexagonal
+pattern, covering roughly $4.4\mathrm{deg^2}$ , and reaching 
+$0.97 \mathrm{mJy \,beam^{-1}}$
+over the $15.5 \mathrm{km \,s^{-1}}$ channels, see Figure~\ref{fig:antlia2} \citealt{hess}.  This deep map detected 30 HI cluster members, 28 of
+which were new HI detections, and 20 of which were the first redshift
+measurements at any wavelength.  The broad bandwidth coverage, and
+lack of bright, dominating sources in the Antlia mosaic led to the
+recognition of the `$u=0$' problem in KAT-7 spectral-line data.  In
+this case, RFI that exists below the level of the noise in the
+visibility data, and would normally be incoherent, adds constructively
+when the fringe rate between two antennas is equal to zero.  It is not
+a unique phenomenon to KAT-7, but it is particularly a problem on
+short baselines.  (See \citealt{hess} for a more complete explanation).
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f17.eps}
+\caption{HI mosaic of NGC~3109 and Antlia dwarf superposed on a
+ DSS~B image. The green contours are [0.5, 1.07, 2.1, 3.2, 5.4,
+ 10.7, 21.4, 32.2, 53.6, 75.0, and 96.5] times the peak of 
+ $107.2 \mathrm{Jy \,{beam}^{-1} \times km \,s^{-1}}$.
+ NGC~3109 ($\mathrm{V_{sys}  = 404 \,km\, s^{-1}}$) is at the
+ top and Antlia ($\mathrm{V_{sys} = 360 \,km\,s^{-1}}$) is at the bottom. The two
+ background galaxies ESO~499-G037 ($\mathrm{V_{sys}  = 953\, km \,s^{-1}}$) and
+ ESO~499-G038 ($\mathrm{V_{sys} = 871\, km \, s^{-1}}$) with its associated HI cloud
+ ($\mathrm{V_{sys} = 912 \,km \,s^{-1}}$) are between NGC~3109 and Antlia. The
+ synthesized beam is shown in the lower-right corner.}
+\label{fig:ngc3109}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f18.eps}
+\caption{A cut-out of the Antlia Cluster mosaic: color contours
+  corresponding to the systemic velocity of the galaxy detected in HI
+  emission are overlaid on a WISE 3.4\,$\mu$m image. NGC~3281,
+  detected in absorption, is in dashed contours.  Dark blue is
+  $\mathrm{<2200 \,km \, s^{-1}}$, cyan is $\mathrm{2200-2800 km
+    \,s^{-1}}$, magenta is $\mathrm{2800-3400 \,km \,s^{-1}}$, and red
+  is $\mathrm{>3400 \,km\, s^{-1}}$.  HI rich galaxies are detected in
+  a ring around the dominant elliptical galaxy, NGC~3268. These KAT-7
+  observations had a usable bandwidth sensitivity to HI emission at
+  recessional velocities between $\mathrm{1200-4600 \,km \,s^{-1}}$,
+  and 30 HI galaxies were detected between $\mathrm{1800-4300 \,km
+    \,s^{-1}}$.  For more details see \citealt{hess}}
+\label{fig:antlia2}
+\end{figure}
+
+\subsubsection{OH}
+
+\noindent 
+The frequency range of KAT-7 covers all four ground-state transitions
+of hydroxyl: 1612, 1665, 1667 and 1720\,MHz.  Maser emission occurs in
+these transitions under a variety of conditions: in massive
+star-forming regions (primarily in the main-lines at 1665 and
+1667\,MHz \citep{caswell98}, in the shells around AGB stars at
+1612\,MHz \citep{sevenster}, and in shocked regions such as supernova
+remnants at 1720\,MHz \citep{wardle}.
+
+While KAT-7 does not have the angular resolution to map individual
+maser spots, its narrowest spectral mode gives a velocity resolution
+of 68\,m/s, enough to resolve narrow maser lines in massive
+star-forming regions.  A number of methanol masers in star-forming
+regions have been found to exhibit periodic variations
+(\citealt{goedhart} and references therein). \citet{green} attempted
+to monitor a short-period source in the hydroxyl main-lines and found
+a weak indication of periodicity, but the time-series was
+undersampled. Monitoring is an ideal niche application for KAT-7 since
+it generally has more time available than the Parkes Telescope or
+ATCA\@. Six of the known periodic methanol masers have hydroxyl maser
+counterparts that can be detected with KAT-7. These sources are
+being monitored on a weekly basis at both 1665 and 1667\,MHz, using
+interleaved observations at both frequencies in a 13-hour schedule
+block.
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/f19.eps}
+\caption{Masers in \mbox{G331.13-0.24} at 1665\,MHz monitored with KAT-7. The
+  underlying greyscale map shows the positions of the continuum
+  emission while the coloured contours show the continuum-subtracted
+  maser emission. The insets show the spectrum at the indicated
+  positions, where the radial velocity scale is $\mathrm{m \, s^{-1}}$ with
+  respect to
+  the Local Standard of Rest. The synthesized beam is shown as a
+  dashed ellipse at the bottom left corner.}
+\label{fig:masers}
+\end{figure*}
+
+Figure~\ref{fig:masers} shows a pilot observation of the star-forming
+region \mbox{G331.13-0.24} at 1665\,MHz. The large field-of-view of KAT-7 led
+to the detection of several maser sources as well as several diffuse
+HII regions. The positions, velocities and flux densities are
+consistent with those from recent Parkes observations
+\citep{caswell14}, confirming that the system is performing as
+expected.  The observations are dynamic-range-limited and three of the
+six fields observed (including \mbox{G331.13-0.24}) are dominated by off-axis
+sources, potentially creating errors in the measured flux density of
+the target source.  Direction-dependent calibration techniques are
+still under investigation \citep{bhat}. Preliminary results from the
+fields not affected by these effects show significant variability
+(Goedhart et al.~in~prep). Observations of \mbox{G330.89-0.36}, which has a
+peak brightness of 824\,Jy\,per beam, were used to measure the spectral
+dynamic range and channel isolation. The line-to-line dynamic range
+was \textcolor{blue}{31\,dB. A maximum imaging dynamic range of 32\,dB} was
+achieved after applying self-calibration and \textsc{clean}ing
+interactively.
+
+
+
+%=================================================
+\iffalse 
+\subsection{HI Intensity Mapping}
+\noindent
+In cosmology, intensity mapping of the HI spectral line is an
+observation technique used for surveying the large-scale structure of
+the universe (see e.g.~\citealt{bull}). By mapping the distributions
+of neutral hydrogen gas in nearby galaxies astronomers are able to
+model the dark matter distribution of each galaxy.
+
+KAT-7 records both single-dish (auto-correlation) data as well as
+interferometric (cross-correlation) products. Auto-correlation data
+can be used for creating the large-scale high-resolution maps, while
+the interferometric data allows for the removal of systematic errors
+through calibration.
+
+This implementation of combined single dish and interferometric data
+has been identified as a possible observation mode for improved
+detection of the Baryon Acoustic Oscillation (BAO) feature and KAT-7
+may be used as a proof of concept for
+future HI intensity mapping surveys (see \citealt{bull}). 
+\fi
+%============================
+
+\section{Technology Lessons Learned}
+\label{sec:lessons}
+
+\noindent
+We learned several lessons during the construction and use of the
+KAT-7 array.
+
+The lightweight Stirling coolers used for the cryogenic system are
+cheaper than conventional Gifford-McMahon (G-M) cycle coolers but need
+maintenance (at least) annually. They are not cold enough (80\,K) to
+achieve a large cryopumping effect and so the system needs ion pumps
+in order to retain a high vacuum and mechanical dampers to reduce the
+vibration generated by the Stirling coolers. Both of these sub-systems
+need replacement on a regular basis, which involves the use of cranes
+and a team of technicians, plus about 2 days on an external pump to
+obtain high enough vacuum before the receivers can be used.  The
+capital expenditure for Stirling cycle cooling for 3 receivers on all
+64 MeerKAT antennas is ZAR 3.3 million less, but the cost of expected
+maintenance, parts and electricity bill would be ZAR 1.1 million
+more. This means that over a 3-4 year period Stirling cycle coolers
+would end up much more expensive to install and operate than G-M
+cryogenic coolers. Using the G-M cooling system should also reduce
+down-time for MeerKAT antennas and this has not been factored into the
+costs.
+
+The composite dishes with embedded metal mesh have large weight
+advantages over dishes made of large metal panels which in turn means
+that the backing structure can be light and the motors need not be
+powerful.  They must be constructed correctly as they cannot be
+adjusted or machined after the fact, and this is in turn means that
+the fibre weave, temperature, humidity and vacuum need to be very
+carefully controlled during fabrication.  Also, the mould needs to be
+machined to higher accuracy than is needed for the dish; this is
+relatively simple for a circularly symmetrical design, as only one
+segment has to be accurately made and then copied.  This is far more
+difficult for a design without that symmetry (e.g.~MeerKAT).  Large
+single-piece dishes must be made on-site as moving them becomes a
+logistical problem.
+
+
+The ball-screw mechanism for the elevation drive has proven reliable
+and simple and it is retained in the MeerKAT design.
+
+The KATCP protocol has shown itself to be flexible and very useful in
+testing and commissioning, and can readily be put into scripting form
+for routine observations.
+
+SPEAD, although still undergoing active development, has also proven
+effective and will be further rolled out for use in MeerKAT.
+
+The correlator architecture, correlator and beamformer based on FPGA
+technology and data transfer over a managed network switch, have also
+been found to be both flexible and reliable.
+
+For continuum sources we reach a confusion limit of about
+0.5--1.0\,mJy (depending on the field) after 8\,hours; and this is
+worse in the Galactic plane.  This makes high-dynamic-range imaging
+difficult, although dynamic ranges of a few 1000 are regularly
+reached. For spectral-line observations this confusion limit is not an
+issue.
+
+In summary, KAT-7 is well suited for:
+
+\begin{itemize}
+\item Mapping low-surface-brightness continuum emission (e.g.~radio
+  halos and relics).
+\item Mapping extended ($\geq 10\arcmin$) spectral-line sources, such
+  as HI around nearby galaxies and OH emission around star-forming
+  regions. The maximum baseline is too short to measure individual
+  maser spots, but we can measure their spectra with high frequency
+  resolution.
+\item Observing the variability of continuum sources $\geq 10$\,mJy at
+  1.8\,GHz.
+\item Pulsar observations with the beamformer output.
+\item VLBI observations with the beamformer output.
+\end{itemize}
+

@@ -1,0 +1,87 @@
+\documentclass[usenatbib,usegraphicx]{mn2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{natbib}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{times}
+%       \citestyle{aa}
+\usepackage{float}
+
+\hyphenation{HartRAO}
+\def\aap{Astronomy \& Astrophysics}
+\def\ApJ{The Astrophysical Journal}
+\def\AJ{The Astronomical Journal}
+\def\MNRAS{Monthly Notices of the Royal Astronomical Society}
+
+\begin{document}
+
+\bibliographystyle{mn2e}
+
+\title[The KAT-7 Radio Telescope] {Engineering and Science Highlights of the KAT-7 Radio Telescope}
+
+\date{Accepted. Received ; in original form }
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2015}
+\label{firstpage}
+
+\input{tex/authorlist}
+\maketitle
+
+\begin{abstract}
+The construction of the KAT-7 array in the Karoo region of the
+Northern Cape in South Africa was intended primarily as an
+engineering prototype for technologies and techniques applicable to
+the MeerKAT telescope. This paper looks at  the main
+engineering and scientific highlights from this effort, and
+discusses their applicability to both MeerKAT and other
+next-generation radio telescopes. 
+\textcolor{blue}{In particular we found that the
+composite dish surface works well, but it becomes complicated to
+fabricate for a dish lacking circular symmetry, the Stirling cycle
+cryogenic system with ion pump to achieve vacuum works but demands
+much higher maintenance than an equivalent Gifford-McMahon cycle
+system, the ROACH-based correlator with SPEAD protocol data transfer
+works very well and KATCP control protocol has proven very flexible and 
+convenient.
+It has been used for scientific observations where it has a niche in mapping
+low surface-brightness continuum sources, some extended HI halos and OH masers 
+around extended star-forming regions. It can also be used to monitor
+continuum source variability, observe pulsars and make VLBI observations.}
+\end{abstract}
+
+\begin{keywords}
+instrumentation:interferometers --  radio continuum:general -- radio lines:general
+\end{keywords}
+%\section{Introduction}
+\input{tex/abstract}
+
+\input{tex/parameters}
+
+%\section{Design Drivers}
+\input{tex/design}
+%\section{Choice of Frequency}
+\input{tex/frequency}
+%\section{Antenna and Optics}
+\input{tex/antenna}
+%\section{RF and IF chain}
+\input{tex/RF}
+%\section{Correlator}
+\input{tex/correlator}
+%\section{Control}
+\input{tex/control}
+%%%%%%%%%%%%%%%%%%%%
+\input{tex/8and9}
+\input{tex/acknowledgements}
+\bibliography{k7}
+%\input{tex/appendix}
+
+
+%\bsp
+\label{lastpage}
+
+ \end{document}
+

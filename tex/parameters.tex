@@ -1,0 +1,53 @@
+
+\begin{table*}
+\caption{Key performance parameters}
+\begin{tabular}{lc}
+\textbf{Parameters} & \textbf{Value} \\
+\hline
+Number of antennas        & 7 \\
+Dish diameter             & 12\,m \\
+Baselines                 & 26\,m to 185\,m \\
+Frequency Range           & 1200\,MHz--1950\,MHz \\
+Instantaneous Bandwidth   & 256\,MHz \\
+Polarization              & Linear non-rotating (Horizontal + Vertical) feed \\
+$T_{sys}$                 & \textless 35\,K across the entire frequency band \\
+                         & ($\approx 30$\,K for all elevation angles \textgreater $30\degr$)\\
+Antenna efficiency at L-band & 66\% \\
+Primary beam FWHM at 1.8\,GHz & $1.0\degr$ \footnotemark[1] \\
+Angular resolution at 1.8 GHz & 3\,arcmin \\
+Location                 & latitude $30.7148\degr$ S, longitude $21.388\degr$ E, Elevation 1054m \\
+Continuum Sensitivity    & 1.5\,mJy in 1 minute (256\,MHz bandwidth, $1\sigma$)\\
+Angular Scales           & 3$\arcmin$ to 22$\arcmin$ \\
+%\enddata
+\hline
+\end{tabular}
+\\
+$^1$The primary beam FWHM $\theta = 1.27\frac{\lambda}{D}$.\\
+\label{table:array}
+\medskip
+\end{table*}
+%table 2
+
+
+\begin{table*}
+\caption{Correlator Modes}
+\begin{tabular}{lcc}
+\textbf{Mode} & \textbf{Processed bandwidth/MHz} & \textbf{Channel bandwidth/kHz}  \\
+\hline
+Wideband   & 400 & 390.625\footnotemark[1]\\
+Beamformer & 400 & 390.625\footnotemark[2]\\
+8k Wideband & 400 & 48.8\footnotemark[3]\\
+HI Galaxy Clusters & 400 / 16 = 25  & 25000 / 4096 = 6.1  \\
+HI Large Galaxies  & 400 / 32 = 12.5 & 12500 / 4096= 3.0517 \\
+HI Galaxies / Maser Search  & 400 / 64 = 6.25\footnotemark[4]  &  6250 / 4096 = 1.525879 \\
+Maser Monitoring & 400 / 256 = 1.5625 & 1562.5 / 4096 = 0.3814697\\
+\hline
+
+\end{tabular}
+\\
+$^1$The channel bandwidth is obtained by dividing the IF  bandwidth (400 MHz) by the total number of channels (1024).  Note  that only 256 MHz of the IF bandwidth is usable due to RF filtering.\\
+$^2$Similar to wideband mode, single boresight beam only.\\
+$^3$The IF bandwidth (400 MHz) is divided into 8192 channels.\\
+$^4$The usable Bandwidth is slightly less\\
+\label{table:modes}
+\end{table*}

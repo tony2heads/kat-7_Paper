@@ -1,0 +1,43 @@
+\section{Design Drivers}
+\label{sec:design}
+
+\noindent
+KAT-7 was designed primarily as an engineering test-bed and a
+risk-mitigation platform for MeerKAT\@. These new technologies were
+expected to reduce either capital or running costs when compared to a
+more `traditional' radio telescope array. The novel parts included:
+
+
+\begin{itemize}
+\item On-site manufacture of single-piece reflectors made of a
+  composite material using a vacuum infusion process. This had an
+  embedded fine wire mesh to act as the radio reflective surface.
+\item A single motor drive per axis with an anti-backlash mechanism
+  and the ball-screw concept for elevation.
+\item Stirling cycle cooling to cryogenic temperatures (80\,K) for the
+  receiver.
+\item RF \textcolor{blue}{over} fibre for data transport.
+\item Reconfigurable Open Architecture Computing Hardware) (ROACH)
+  boards for all stages of correlation and beamforming.
+\item Control using the KATCP (Karoo Arrat Telescope Control Protocol)
+ protocol (see section~\ref{sec:KATCP}).
+\item Digital data transport in SPEAD (Streaming Protocol for
+ Exchanging Astronomical Data) packets (see section~\ref{sec:SPEAD}).
+\end{itemize}
+
+We decided to employ 12-m diameter prime focus dishes which, at that time,
+were aligned with results from SKA optimization studies
+\citep{strawman}. These were designed to provide accurate
+pointing (\textless 25\arcsec) and aperture efficiency \textgreater
+50\% across the frequency range of 500~MHz--10~GHz. This range
+was chosen to be aligned with the MeerKAT goals then in mind. Because
+of the dangers of lightning strikes on the composite dish, lightning rods were
+included.\textcolor{blue}{These would not be so important on a solid metal
+dish as the huge currents induced would have a lager area to conduct them to the
+ground.}
+
+\textcolor{blue}{
+Science goals for the seven element array were considered secondary to the
+design and construction of the array elements. The original scientific 
+considerations for the antenna layout and backend frequency coverage are 
+considered in section~\ref{sec:freq}.}

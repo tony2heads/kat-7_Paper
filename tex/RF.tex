@@ -1,0 +1,145 @@
+\section{RF and IF chain}
+\label{sec:RF}
+
+\subsection{Feed}
+
+\noindent
+The feed provides native horizontal and vertical linear
+polarization. It was decided not to convert to circular polarization
+in the receiver. To add a polarizer would have increased the
+complexity of the receiver, which was considered a risk. Adding the
+required components (90\degr\ hybrid and isolators preceding the
+low-noise amplifiers) inside the 80\,K cryostat with a single stage
+Stirling cooler would increase system noise by at least 5\%.  A linear
+polarization response could be calibrated sufficiently well to meet
+the 30-dB linear and circular polarization purity required for
+e.g.~measurements of Zeeman splitting; \textcolor{blue}{making
+  a feed for a large fractional bandwidth (\textgreater~30\%) while
+  retaining accurate circular polarization is hard.}
+
+\subsection {RFE Architecture}
+
+\noindent
+The Radio frequency Front End (RFE) architecture of KAT-7 is shown in 
+Figure~\ref{fig:block}.
+The design was driven by the following design decisions:
+
+\begin{itemize}
+\item Reduce complexity of the RFE at the antenna focus to reduce
+  self-generated RFI to the maximum extent possible, in preference to
+  mitigating RFI later.
+\item Reduce complexity of the RFE at the antenna location and move
+  the down-converter and clock distribution to the same location as
+  the digitiser.
+\item Test the concept of mitigating radio frequency interference
+  (RFI) by moving the digitiser away from the antenna location to a
+  shielded container located about 6\,km away, with the Losberg
+  mountain providing a very high order of RFI shielding.
+\end{itemize}  
+
+
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/f4.eps}
+\caption{Signal chain from receiver to Digital Back End(DBE). Signals
+  arrive at the horn and go through the OrthoMode Transducer (OMT) to
+  the Low Noise Amplifier (LNA). Calibration from a noise generator
+  can be injected. After further amplification and filtering they
+  descend to the pedestal where they are again amplified. The signal
+  level is adjusted by attenuators and the signals is then filtered
+  and used to modulate an optical signal. This is transmitted over
+  optical fibre and converted back to an RF signal in the Losberg
+  facility. This then is mixed with local oscillators and digitally
+  sampled for the Digital Back End}
+\label{fig:block}
+\end{figure*}
+
+
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/f5.eps}
+\caption{An illustration of the down-conversion and sampling
+  procedure. On the left side is the signal chain (top to bottom) with
+  bandpass filters BF1-BF3, local oscillators LO1 and LO2 and the
+  Analogue to Digital Converter (ADC). $f_{LO1}$ and $f_{LO2}$
+  represent frequencies of the local oscillators. On the right are the
+  spectra at the various stages. The top spectrum shows the signal as
+  it arrives at Losberg, the middle spectrum shows the signal (and its
+  alias) after mixing with LO1, while the bottom spectrum show the
+  signal (and alias) after mixing with LO2, just before it is sampled
+  by the ADC\@. N1 to N5 are the Nyquist zones. }
+\label{fig:mixing}
+\end{figure*}
+
+
+ 
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/f6.eps}
+\caption{Detail of the last stage of the down-conversion procedure,
+  showing the last (fixed) local oscillator and possible aliasing. The
+  bandpass filter (BPF3) is designed to reduce that aliasing to a
+  minimum before it enters the ADC, so that it does not appear in the
+  sampled data. N1-N3 represent different Nyquist zones}
+\label{fig:detail}
+\end{figure*}
+
+It is a double heterodyne system involving fixed and variable
+local-oscillator (LO) signals that translate an RF (in the frequency
+band of 1.2--1.95\,GHz) to an IF signal (in the band of 72--328\,MHz)
+compatible with the digital samplers.  The first local oscillator
+(LO1) can be set in the range 5.5--6.1\,GHz while the second (LO2) is
+fixed at 4.0\,GHz.  The mixing scheme is shown in
+Figure~\ref{fig:mixing}.  Figure~\ref{fig:detail} gives details of the
+last stage of down-conversion and suppression of aliasing. `BPF's are
+bandpass filters and `ADC's are analogue to digital converters.
+
+
+
+
+
+\subsection{Noise Diodes}
+
+%\textbf{XXXX SAY WHY WE HAVE A COUPLER *AND* A PIN XXXX}
+
+\noindent
+Each receiver includes two stabilized noise diodes to permit online
+monitoring of system noise and receiver gain. The period and the duty
+cycle of the noise system can be software selected, as well as having
+a simple on/off mode. The signal can either be added to the received
+(`sky') signal via an antenna that is integrated into the feed horn
+(`the pin') or via 3-dB couplers that are installed between the
+OrthoMode Transducer (OMT) ports and the low noise amplifiers (`the
+coupler').  The `pin' signal level is approximately equivalent to the
+system temperature (${T_{sys}}$) while the `coupler' level is
+approximately $\frac{T_{sys}}{10}$. Using the `coupler' it is possible
+to calibrate total-power measurements to an absolute scale with
+accuracy better than 10\%.  The `pin' injection was designed to allow
+delay and phase calibration between the orthogonal linear polarization
+channels while the antennas were operating in single-dish mode, and
+has been rarely used since the array was functional.  The receivers
+were designed to permit observations of the Sun. However, no `high'
+noise diode is provided to allow such observations to be calibrated.
+
+
+\subsection{Down-conversion and Digitisation}
+
+\noindent
+To reduce the risk of RFI at the antennas, the analogue RF signal is
+transported via fibre-optic cables to a central facility
+\textcolor{blue}{behind Losberg mountain}. The signals are then
+down-converted using a common LO, after which they are sampled in
+baseband (i.e.~first Nyquist zone). The nominal signal is sampled with
+3 bits (r.m.s.~$\approx 3$ levels) using 8-bit samplers. Together with
+the 27\,dB of headroom to the 1-dB compression point provided by the
+end-to-end analogue line-up, this provides the high dynamic range that
+is required to limit the response to strong interfering signals. Even
+on occasions when navigation satellites traverse the antenna beam,
+gain compression remains at or below the 1\% level so intermodulation
+products remain undetectable.
+
+The analogue chain was designed to limit instrumental phase
+instability to less than $8\degr$ r.m.s.~over 30-minute time scales. A
+GPS-disciplined Rubidium maser clock is employed as frequency
+reference to which the LOs are phase-locked. This allows the system to
+achieve adequate phase stability to limit VLBI coherence loss to
+20\% at frequencies up to 2\,GHz.

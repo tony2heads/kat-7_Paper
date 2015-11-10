@@ -1,0 +1,86 @@
+This is to cover the points made in the Scintific Editor's comments
+and the Reviewer's comments:
+
+General
+-------
+
+In the new pdf the textual changes and additions are in blue.
+
+Some figures have changed. In particular there is now a photo of the
+array and one of the dish structure (in place of the CAD drawing). The
+figure with pulsar folding (with bad character size) has been
+replaced.  The figure captions have been lengthened in some cases to
+meet with the reviewer's comment 4.  (A few of the original figures
+are very large, so I would prefer to send them once there paper is
+accepted, or has only minor changes needed.)
+
+The Appendix (with acronyms) has been omitted, as has the section on
+HI intensity mapping (which did not include any useful results)
+
+Enumerated list have gone, although some itemized list have stayed.
+(My apologies, but I like lists - this text can be changed, but I think
+it reads more clearly with them in)
+
+
+Authors
+-------
+One author has been added and a few of their affiliations changed.
+
+Abstract
+--------
+The abstract has been extended to give a better summary
+
+
+Introducion
+----------
+
+There is now an aerial photo of the array and the layout diagram has a
+more obvious crossed lines at the centre.
+
+The text about the initial ideas has been reduced.
+
+Design Drivers
+--------------
+
+minor text change.
+
+The design was not for any real astronomical goals, KAT-7 was designed
+as a enigneering test-bed for possible concepts for MeerKAT. The use
+of KAT-7 for astronomy was put in as an afterthought.
+
+Antenna and Optics
+------------------
+
+There is now a photo of dishes-edge on (the original photo shows the
+lightning rods more clealy), and some text about the primary beam
+measurements.
+
+The section on composites has been changed, and notes the drawbacks of
+composites when making more complicated dish shapes (in particular
+with the anisiotropy problem)
+
+The subsection 4.0.1 ('Why Composites') has been changed to mention
+alternatives and some of the drawbacks of composite dishes.
+
+RF and IF chain
+---------------
+
+The calibratability issue; We use linear dipole feeds just as ATCA
+does. As far as I know the ATCA L-band receivers there have always
+used linear dipoles. Although it is possible to make wideband circular
+polarization receivers with combinations of half wave and quarter wave
+plates, it is had to get better than 10% polarization purity across
+the whole band for large fractional bandwidths, as the 'quarter wave'
+varies so much across the band.
+
+For an example of measuring circular polarization with dipole feeds at
+ATCA see O'Sullivan et al MNRAS 435, 311–319 (2013), particularly
+section 2, 2nd paragraph
+
+Correlator
+---------
+
+The correlator diagram has been changed, to attempt to make it clearer.
+
+
+

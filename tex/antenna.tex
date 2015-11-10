@@ -1,0 +1,131 @@
+\section{Antenna and Optics}
+\label{sec:ant}
+
+
+\noindent
+\textcolor{blue}{
+To confirm the suitability of the composite antennas for MeerKAT and SKA
+it was necessary to show that they had good aperture efficiency at the
+highest frequency being considered, and that this lightweight structure
+could be controlled in standard observing conditions.}
+
+To achieve aperture efficiency of 50\% at 10\,GHz with standard
+horn feeds \citep{olver}, the unweighted
+small-scale reflector accuracy was required to be better than 1.5-mm
+r.m.s. This was achieved by combining theodolite
+measurements of the completed antennas with finite-element analysis
+for the worst-case load conditions. Follow-up measurements with radio
+holography \citep{scott} using a number of geostationary satellite
+beacons around 11.7\,GHz confirmed these results.
+
+The antennas achieve blind pointing accuracy of 25\arcsec\ r.m.s under
+all but the most extreme operating conditions, with a jitter of no
+more than 5\arcsec\ over time scales of seconds. This is achieved at
+tracking rates up to 0.05\degr/sec, across the elevation range. Below
+2\,GHz the impact on measurements across the antenna beam is no more
+than 1\% , and increases to a maximum of 5.5\% at 10\,GHz. Optical
+pointing results show that referenced pointing \citep{rupen}, which
+involves regularly checking the pointing against a pointing
+calibration source near the field being observed, may allow accuracies
+of better than 10\arcsec\ to be achieved, which would reduce the
+impact to 2\%.
+The focal ratio was chosen to be 0.38, which is close to optimal for
+single pixel feeds using a conical horn feed \citep{rudge}.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/f3.eps}
+\caption{Two of the KAT-7 dishes viewed side-on. Note the lightning rods at the apex and near the focus, the backing structure of steel beams with circular holes, the small counterweight on the right and the sun shield on the left hand side of the pedestal. }
+\label{fig:CAD}
+\end{figure}
+
+
+
+\begin{table}
+\caption{Dish specification}
+\begin{tabular}{lc}
+\textbf{Parameter} & \textbf{Value}\\
+\hline
+Pointing Accuracy & 25\arcsec \\
+Surface Accuracy & 1.5~mm r.m.s.~(spec.)\\
+ & 1.0~mm r.m.s.~(goal) \\
+Specified Upper Frequency Limit & 10 GHz \\
+Wind (Operational)  & 36 km/h \\
+Wind (Marginal Operation) km/h & 45 km/h \\
+Wind (Drive to Stow) & 55 km/h \\
+Wind (Survival)  & 160 km/h \\
+Azimuth Rotation slew speed  & 2\degr /s \\
+Azimuth limits &  $-$175\degr, +285 \degr \\
+Elevation slew speed & 1\degr /s \\
+Elevation limits & 0\degr, 90\degr \\
+Diameter &  12 m \\
+Focal ratio f/D & 0.38 \\
+Lowest Natural Frequency & 3 Hz \\
+Feed/Cryo Mass  & 75 kg \\
+Mount Type & Alt--Az Prime Focus \\
+\end{tabular}
+\label{table:ant}
+\end{table}
+
+The picture of two dishes is shown in figure~\ref{fig:CAD} and dish
+specifications are shown in table~\ref{table:ant}.  \textcolor{blue}{
+  Primary beam measurements at L-band were initially done for total
+  intensity mapping by raster scans across very bright radio sources
+  (in particular Hercules~A, Orion~A, Taurus~A and Virgo~A). These
+  were found to be consistent with modelling done by EMSS, the company
+  doing the receiver systems and optical design. Later the beam shape
+  was measured more accurately using a full polarization
+  holography-like technique on the same bright sources (with some
+  dishes tracking while others made spiral scans around the
+  source). The broad features were the same, but the spiral scan mode
+  showed details of the secondary lobes and the instrumental
+  polarization in the primary beam.}
+
+ \subsubsection{Why composites?}
+
+ There are three main possible choices for a large dish antenna; a
+ conventional steel structure based on panels, a lighter but possibly
+ more expensive aluminium structure with panels, or a composite dish
+ with metal backing for rigidity. For KAT-7 the choice was made for a
+ composite for the following reasons:
+
+\begin{itemize}
+\item The dish front surface is constructed as a single unit, which
+  gives it inherent stiffness (more efficient structure), something
+  that is lost when the dish is constructed from loose panels.  This
+  is an important aspect which reduces the mass while keeping the
+  stiffness of the dish.
+\item When constructed as a single unit there are no discontinuities
+  in the reflective surface.
+\item When constructed as a single unit there is no need to set up and
+  align panels on a backing structure that is off the ground, which
+  could prove to be time consuming and would be required for every
+  dish.  Setting up of the mould is only required once, but must be
+  done accurately.
+\item Combining the composite dish surface with the steel rib and web
+  backing gives a cost-effective solution.
+\item An infusion process can be used, which is a tried-and-tested
+  technology on such large structures.
+\item Tooling is relatively inexpensive.
+
+\end{itemize}
+
+\textcolor{blue}{ It is also very convenient that the thermal
+  expansion coefficients of the composite dish front and the steel
+  backing are very close to each other, giving low thermal
+  loading. Thermal loading is potentially a large problem for pointing
+  and surface accuracy, given the large temperature changes in the
+  semi-desert climate of the Karoo.} 
+In addition the lightweight
+nature of the dish meant that the counterweight needed would be light
+and that the motors could be low powered and still achieve good slew
+speeds.  \textcolor{blue}{ The main drawbacks for a composite laminate
+  dish are that the mould accuracy must be higher than that of the
+  desired surface and that the layers of the laminate must be done in
+  a balanced and symmetrical way to reduce the inherently anisotropic
+  nature of the fibre mats. For balance any laminae must be placed
+  symmetrically around a centre line, and for symmetry any laminae at
+  layer (\textit{n}) must be have an identical ply at layer
+  (\textit{-n}) from the middle of the layers. For example a minimal
+  set would be weave layers in the sequence (0,90), (45,-45), (45,-45)
+  and (0,90)\degr\ . This symmetry is straightforward for a
+  circularly symmetrical dish, but more complicated for other shapes.}

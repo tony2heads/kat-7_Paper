@@ -1,0 +1,108 @@
+\section{Correlator}
+\label{sec:corr}
+
+\noindent
+The correlator modes are noted in Table~\ref{table:modes}.  The
+correlator is based on the so-called `FX' architecture (Fourier
+transform `F' followed by Cross-correlation `X') with Hann-windowed
+polyphase filter banks (PFBs).
+
+The spectral-line modes are limited to a single band per observation,
+which is a minor inconvenience for observations of OH maser lines. The
+correlator always computes \textcolor{blue}{all four complex
+  polarization products} for all baselines (including
+autocorrelations) since, with linearly-polarized feeds, total-power
+measurements are easily corrupted by linear polarization and therefore
+polarization calibration is required to achieve the highest possible
+fidelity total-power imaging.
+
+The correlator performs all internal computations with sufficient
+numerical precision to support a spectral dynamic range of 43\,dB.
+
+The Digital Back-End (DBE) also provides a coherently-summed
+beamformer in parallel with a wide-bandwidth correlator. The
+beamformer voltages are channelized to coincide with the correlator's
+390\,kHz-wide channels. This correlator output is used by the Science
+Processing Team's online pipeline to keep the
+array phased-up during the course of the observation. The Science
+Processor also provides the facility to re-synthesize and re-sample the
+channelized voltages to the bandwidths required for the observation.
+
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/f7.eps}
+\caption{The KAT-7 Correlator. The signal chain (in black) for two of
+  the telescopes is shown, as well of the control and monitoring (in
+  red). The F-engines do the Fourier transform and X-engines do the
+  correlations. For $n$ antennas there are $\frac{n(n+1)}{2}$
+  correlation products if you include all autocorrelations.}
+\label{fig:correlatorbd}
+\end{figure*}
+
+
+The beamformer's output may be used for VLBI recording or for
+performing coherent de-dispersion of pulsar signals.
+Figure~\ref{fig:correlatorbd} shows a simplified block diagram of
+KAT-7's prototype correlator, consisting of three main components:
+
+\begin{itemize}
+\item The \textit{F-engines} which channelise the incoming data
+  streams into spectral components.
+\item The \textit{X-engines} which multiply and accumulate every
+  product pair.
+\item A commodity, off-the-shelf network switch to interconnect these
+  boards.
+\end{itemize}
+
+
+KAT-7 required additional features to turn the basic correlator into a
+more fully-featured digital back-end, most notably beamforming (for
+tied-array operation) as well as additional operations in the
+correlator itself such as fringe rotation and delay compensation, fast
+readout speeds and a standardised output protocol. Hardware changes
+were also required: The performance of the existing digitisers within
+the CASPER\footnote{\url{https://casper.berkeley.edu}} collaboration
+were found to be inadequate for KAT-7, and there was a desire for
+KAT-7 to standardise on a single, general-purpose hardware processing
+platform that could both digitise and process the signals.
+
+In its current form, the KAT-7 DBE consists of 16 ROACH boards, eight of
+which are configured as F-engines and the remaining eight as X-engines. It
+is a real-time, full-Stokes, asynchronous packetized design with 16
+inputs, processing 400\,MHz of RF bandwidth (only 256\,MHz of which
+contains useful analogue signal because of the anti-aliasing filters
+introduced in the RF chain (see Figure~\ref{fig:detail}).
+ROACH boards can optionally host ADCs for digitising analogue signals
+and the F-engines in KAT-7 are equipped with KAT ADCs to digitise the
+down-converted IF signal at 800\,MSample/s with an 8-bit resolution. A
+20-port 10\,GbE network switch is used to interconnect all the
+processing boards.
+
+While the F-engines and their ADCs are synchronously clocked from a
+GPS-disciplined rubidium common clock source, the X-engines are purely
+compute nodes that operate from their own, asynchronous,
+clocks. Packets are timestamped in the F-engines and these headers are
+interrogated by subsequent processors for data identification and
+re-alignment. These \textcolor{blue}{X-engines} could easily be
+replaced by ordinary CPUs and GPUs when technology advances enable
+them to cope with the data rates presented.
+
+The fringe rotation and delay compensation were implemented within the
+F-engines by employing a combination of time-domain and
+frequency-domain processing, and the system currently allows for
+phased-tracked wideband (continuum) and spectral-line observations. It
+does not allow online Doppler tracking.
+
+Frequency-domain beamforming is implemented by tapping a copy of the
+channelised data destined for the X-engines, and presenting it to a
+co-located \textit{B-engine} which performs beam steering and
+summation. The existing F-engines are thus shared by the X- and
+B-engines. Development time and risk were reduced by leveraging the
+existing delay-compensation software. This B-engine is not resource
+hungry, needing only a single complex multiplier and adder to sum the
+already serialised data, along with a lookup table for the steering
+coefficients. This makes it possible to create additional beams with
+modest incremental hardware costs.
+
+All systems are being designed to be directly transportable and
+scalable up to larger arrays such as MeerKAT and the SKA.
