@@ -141,6 +141,11 @@ NRAO
 {Sevenster} M.~N.,  {Chapman} J.~M.,  {Habing} H.~J.,  {Killeen} N.~E.~B.,
   {Lindqvist} M.,  1997, AAPS, 122, 79
 
+\bibitem[\protect\citeauthoryear{{Subrahmanyan}, {Ekers}, {Saripalli} \&
+  {Sadler}}{{Subrahmanyan} et~al.}{2010}]{sub}
+{Subrahmanyan} R.,  {Ekers} R.~D.,  {Saripalli} L.,    {Sadler} E.~M.,  2010,
+  MNRAS, 402, 2792
+
 \bibitem[\protect\citeauthoryear{{USSKA Consortium}}{{USSKA
   Consortium}}{2002}]{strawman}
 {USSKA Consortium} 2002, Technical report, {SKA memo 18, Large N - Small D}.
@@ -149,5 +154,10 @@ SKA
 \bibitem[\protect\citeauthoryear{{Wardle} \& {Yusef-Zadeh}}{{Wardle} \&
   {Yusef-Zadeh}}{2002}]{wardle}
 {Wardle} M.,  {Yusef-Zadeh} F.,  2002, Science, 296, 2350
+
+\bibitem[\protect\citeauthoryear{{White}, {Becker}, {Helfand} \&
+  {Gregg}}{{White} et~al.}{1997}]{white}
+{White} R.~L.,  {Becker} R.~H.,  {Helfand} D.~J.,    {Gregg} M.~D.,  1997, ApJ,
+  475, 479
 
 \end{thebibliography}

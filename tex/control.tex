@@ -83,7 +83,7 @@ receivers' copies fresh by propagating any changes
 to the receiver as these changes occur on the transmitter.
 \textcolor{blue}{
 The metadata and variable descriptors are injected into the primary data stream.
-Such changes will occur if the correlator is started, or changes mode
+Such changes will occur if the correlator is started, or changes mode,
 or the frequency of a local oscillator is altered.
 Receiver processes keep state information, so
 the latest values of all variables within the structure are always
@@ -103,7 +103,7 @@ networks, it is easy to support multicast transparently, allowing
 multiple devices to subscribe to the same data-streams.
 \textcolor{blue}{This allows
 real-time data inspection and plotting by subscribing to a subset of the 
-data. As UDP does not check for packet delivery SPEAD was made to tolerate
+data. As UDP does not check for packet delivery, SPEAD was made to tolerate
 some packet loss, but cannot request a lost or corrupted packet.
 Buffering helps by allowing for packets being received out of sequence.}
 
